@@ -1,3 +1,6 @@
+const baseURL = 'https://hello-scalio.herokuapp.com';
+// const baseURL = 'http://localhost:3000';
+
 document.querySelector('#div-detail').style.display = 'none';
 document.querySelector('#div-error').style.display = 'none';
 document.querySelector('#div-back').style.display = 'none';
@@ -13,7 +16,7 @@ btnSend.addEventListener('click', (event) => {
 
   const postId = document.querySelector('#post-id').value;
 
-  fetch(`http://localhost:3000/posts/${postId}`).then((response) => {
+  fetch(`${baseURL}/posts/${postId}`).then((response) => {
     return response
       .json()
       .then((json) => {
